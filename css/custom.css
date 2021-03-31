@@ -47,6 +47,7 @@ body {
     outline: none;
     text-align: center;
     border-radius: 20px;
+    direction: ltr;
 }
 
 .inputName:focus,
@@ -114,4 +115,8 @@ span {
     float: left;
     padding-left: 20px;
     line-height: 50px;
+}
+
+h4 span {
+    direction: ltr;
 }

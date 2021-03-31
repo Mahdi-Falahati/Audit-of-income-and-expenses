@@ -30,4 +30,44 @@ class GetInformations {
         const ul = document.querySelector(".spending");
         ul.appendChild(li);
     }
+
+    addComma(str) {
+        var objRegex = new RegExp('(-?[0-9]+)([0-9]{3})');
+
+        while (objRegex.test(str)) {
+            str = str.replace(objRegex, '$1,$2');
+        }
+
+        return str;
+    }
+
+    geBudgetAndShow() {
+        // get all the money OF user 
+        let budget = prompt("لطفا مقدار بودجه ی خود را به تومان وارد کنید :");
+        if (budget == null || budget == "" || budget == "0" || isNaN(budget)) {
+            window.location.reload();
+        }
+
+
+        // sperete width comma 
+        let money = this.addComma(budget);
+
+        //create span for show budget
+        let span = document.createElement("span");
+        span.innerHTML = money;
+
+        // budget
+        let totalMoney = document.querySelector(".totoal-money");
+        totalMoney.firstElementChild.appendChild(span);
+
+        let leftOverMoney = document.querySelector(".left-over-money");
+        //create span for show left Over Money
+        let spanLOM = document.createElement("span");
+
+
+        spanLOM.innerHTML = money;
+
+        leftOverMoney.firstElementChild.appendChild(spanLOM);
+
+    }
 }

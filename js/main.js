@@ -16,4 +16,9 @@ function callEventListenrs() {
     btnAdd.addEventListener("click", function(event) {
         info.getInput(event);
     })
+
+    // after loaded page get money
+    document.addEventListener("DOMContentLoaded", function() {
+        info.geBudgetAndShow()
+    })
 }
