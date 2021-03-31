@@ -21,4 +21,17 @@ function callEventListenrs() {
     document.addEventListener("DOMContentLoaded", function() {
         info.geBudgetAndShow()
     })
+
+    inputPrice.addEventListener("focusout", function() {
+        info.spretedNumber()
+    })
+
+    inputPrice.addEventListener("focusin", function() {
+        let money = "";
+        money = info.spretedNumber();
+        money = money.replace(/,/g, "")
+        if (money != "") {
+            inputPrice.value = money;
+        }
+    })
 }

@@ -7,28 +7,23 @@ class GetInformations {
         let name = "",
             price = 0;
 
+        const money = inputPrice.value;
+
         // check input if not empty get info
         if (inputName.value == "" || inputName.value == null) {
             inputName.style.boxShadow = "5px 5px 30px orangered";
-        } else if (inputPrice.value == "" || inputPrice.value == null || inputPrice.value == NaN || isNaN(Number(inputPrice.value))) {
+        } else if (inputPrice.value == "" || inputPrice.value == null || inputPrice.value == NaN || isNaN(Number(money.replace(/,/g, "")))) {
             inputName.style.boxShadow = "none";
             inputPrice.style.boxShadow = "5px 5px 30px orangered";
         } else {
-            price = Number(inputPrice.value);
+            price = inputPrice.value;
             name = inputName.value;
-            inputPrice.style.boxShadow = "none";
             this.showSpendItem(name, price);
+            inputPrice.style.boxShadow = "none";
+            inputName.value = "";
+            inputPrice.value = "";
         }
-    }
 
-    showSpendItem(name, price) {
-
-        //crete element li for show spend item
-        const li = document.createElement("li");
-        li.innerHTML = "هزینه  " + name + "  " + price + " هزار تومان"
-
-        const ul = document.querySelector(".spending");
-        ul.appendChild(li);
     }
 
     addComma(str) {
@@ -40,6 +35,20 @@ class GetInformations {
 
         return str;
     }
+
+    showSpendItem(name, price) {
+
+        let money = this.addComma(price);
+
+        //crete element li for show spend item
+        const li = document.createElement("li");
+        li.innerHTML = "هزینه  " + name + "  " + money + " هزار تومان"
+
+        const ul = document.querySelector(".spending");
+        ul.appendChild(li);
+    }
+
+
 
     geBudgetAndShow() {
         // get all the money OF user 
@@ -69,5 +78,13 @@ class GetInformations {
 
         leftOverMoney.firstElementChild.appendChild(spanLOM);
 
+    }
+
+    // spreted number in input price
+    spretedNumber() {
+        let moneySpend = inputPrice.value;
+        let moneySeprated = this.addComma(moneySpend);
+        inputPrice.value = moneySeprated;
+        return moneySpend
     }
 }
