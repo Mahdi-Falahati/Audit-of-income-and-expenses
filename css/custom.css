@@ -1,0 +1,117 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    direction: rtl;
+}
+
+body {
+    background: #365163;
+}
+
+.parent {
+    background-color: #F4D03F;
+    background-image: linear-gradient(132deg, rgb(252, 226, 111) 0%, #05cea6 100%);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 5px 5px 15px #000;
+}
+
+.parent header h1 {
+    color: #fff;
+}
+
+#inputs {
+    padding: 20px;
+    width: 100%;
+}
+
+.lblName {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.lblPrice {
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.inputName,
+.inputPrice {
+    width: 100%;
+    height: 35px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.inputName:focus,
+.inputPrice:focus {
+    box-shadow: #000000 5px 5px 10px;
+}
+
+.titr {
+    padding-bottom: 20px;
+    color: #fff;
+}
+
+.inputbtn {
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    width: 50%;
+    font-size: 17px;
+    background: rgb(255, 111, 0);
+}
+
+@media screen and (max-width:992px) {
+    .main {
+        margin-top: 50px;
+    }
+}
+
+.spending {
+    margin-right: 20%;
+    margin-top: 50px;
+}
+
+.spending li {
+    word-wrap: break-word;
+    width: 70%;
+    font-size: 17px;
+    color: #444;
+}
+
+.totoal-money p,
+.left-over-money p {
+    display: inline-block;
+    color: #000;
+    line-height: 45px;
+}
+
+.totoal-money,
+.left-over-money {
+    margin-top: 50px;
+    color: #0000ff;
+    background: #fff;
+    height: 50px;
+    padding-right: 20px;
+    border-radius: 20px;
+    box-shadow: #444 5px 5px 10px;
+}
+
+.title {
+    border-bottom: .2px dotted rgb(255, 90, 31);
+    padding-bottom: 15px;
+    /* border-radius: 100%; */
+}
+
+span {
+    float: left;
+    padding-left: 20px;
+    line-height: 50px;
+}

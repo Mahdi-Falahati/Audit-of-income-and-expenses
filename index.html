@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>بودجه بندی هفتگی</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+        <header class="text-center titr">
+            <h1>بودجه بندی هفتگی</h1>
+        </header>
+    </div>
+    <div class="container parent">
+        <form class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center pull-right">
+            <header class="title">
+                <h4> هزینه های خود را اینجا وارد کنید.....</h4>
+            </header>
+            <div id="inputs">
+                <label for="name" class="lblName pull-right">اسم :</label>
+                <input type="text" id="name" class="inputName" placeholder="مثلا تاکسی یا کافی شاپ ">
+                <label for="price" class="lblPrice pull-right">قیمت به تومان :</label>
+                <input type="text" placeholder="200 ت" id="price" class="inputPrice">
+            </div>
+            <input type="submit" value="اضافه کردن" class="inputbtn btn btn-warning">
+        </form>
+        <main class="main col-lg-6 col-md-6 col-sm-12 col-xs-12 pull-left">
+            <header class="text-center title">
+                <h4>لیست هزینه ها</h4>
+            </header>
+            <ul class="spending">
+
+            </ul>
+            <div class="totoal-money">
+                <h4>
+                    بودجه هفته :
+                    <p>تومان</p>
+                </h4>
+            </div>
+            <div class="left-over-money">
+                <h4>
+                    باقی مانده :
+                    <p>تومان</p>
+                </h4>
+            </div>
+        </main>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+</body>
+
+</html>
