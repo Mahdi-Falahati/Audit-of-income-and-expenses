@@ -17,6 +17,17 @@ class GetInformations {
             price = Number(inputPrice.value);
             name = inputName.value;
             inputPrice.style.boxShadow = "none";
+            this.showSpendItem(name, price);
         }
+    }
+
+    showSpendItem(name, price) {
+
+        //crete element li for show spend item
+        const li = document.createElement("li");
+        li.innerHTML = "هزینه  " + name + "  " + price + " هزار تومان"
+
+        const ul = document.querySelector(".spending");
+        ul.appendChild(li);
     }
 }
