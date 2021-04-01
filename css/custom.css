@@ -122,3 +122,20 @@ span {
 h4 span {
     direction: ltr;
 }
+
+li {
+    margin-bottom: 2px;
+}
+
+.lists {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: orangered;
+}
+
+.eror {
+    background-color: rgb(255, 166, 166);
+    border-radius: 10px;
+    padding: 12px;
+}
