@@ -48,6 +48,11 @@ class GetInformations {
 
         const ul = document.querySelector(".spending");
         ul.appendChild(li);
+
+        // add price to lacal storage 
+        let prices = this.checkContentExistINlocalStorage("prices");
+        prices.push(li.innerHTML);
+        localStorage.setItem("prices", JSON.stringify(prices));
     }
 
 
@@ -82,7 +87,12 @@ class GetInformations {
 
         leftOverMoney.firstElementChild.appendChild(spanLOM);
 
-
+        // save budget to local storage
+        let budge = this.checkContentExistINlocalStorage("budget");
+        budge.pop();
+        budge.push(money.replace(/,/g, ""));
+        localStorage.setItem("budget", JSON.stringify(budge));
+        localStorage.setItem("leftOverMoney", JSON.stringify(budge));
 
     }
 
@@ -115,6 +125,11 @@ class GetInformations {
             list[count].parentElement.classList += " eror";
             list[count].parentElement.innerHTML = " چی !!! نه خدایی یکم فکر کن تو اصلا انقدر بودجه داری";
 
+            // afte 5s remove eror li
+            setTimeout(() => {
+                document.querySelector('.eror').remove()
+            }, 5000);
+
             // check input price when user write price negative or Enter price but - width left over money if money is negative  his/her budget write a text 
         } else if (Number(spanLOM.innerHTML.replace(/,/g, "") - price) < 0) {
 
@@ -130,12 +145,52 @@ class GetInformations {
             list[count].parentElement.classList += " eror";
             list[count].parentElement.innerHTML = "دیدی چی شد پولت نمیکشه : (";
 
+            // afte 5s remove eror li
+            setTimeout(() => {
+                document.querySelector('.eror').remove()
+            }, 5000);
+
+
         } else {
 
             // calculate result
             let p = spanLOM.innerHTML.replace(/,/g, "") - price;
+
+            // save left over money to local storage
+            let leftOverMoney = this.checkContentExistINlocalStorage("left-over-money");
+            leftOverMoney.pop();
+            leftOverMoney.push(p);
+            localStorage.setItem("leftOverMoney", JSON.stringify(leftOverMoney));
+
             spanLOM.innerHTML = p;
 
         }
     }
+
+    // check content in localstorage
+    checkContentExistINlocalStorage(assessment) {
+
+        let money;
+
+        // get content
+        let contentLocalstorage;
+        if (assessment == "budget") {
+            contentLocalstorage = localStorage.getItem("budget");
+        } else if (assessment == "left-over-money") {
+            contentLocalstorage = localStorage.getItem("leftOverMoney");
+        } else if (assessment == "prices") {
+            contentLocalstorage = localStorage.getItem("prices");
+        }
+
+        // check value in local storege
+        if (contentLocalstorage == null) {
+            money = [];
+        } else {
+            money = JSON.parse(contentLocalstorage);
+        }
+
+        return money
+    }
+
+
 }

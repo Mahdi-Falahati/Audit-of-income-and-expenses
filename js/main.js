@@ -19,7 +19,7 @@ function callEventListenrs() {
 
     // after loaded page get money
     document.addEventListener("DOMContentLoaded", function() {
-        info.geBudgetAndShow()
+        info.geBudgetAndShow();
     })
 
     inputPrice.addEventListener("focusout", function() {
